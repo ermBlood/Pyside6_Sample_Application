@@ -36,7 +36,7 @@ class Ui_w_LoginForm(object):
         self.pb_Ok = QPushButton(w_LoginForm)
         self.pb_Ok.setObjectName(u"pb_Ok")
         icon1 = QIcon()
-        icon1.addFile(u":/Buttons/tick.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/Buttons/tick", QSize(), QIcon.Normal, QIcon.Off)
         self.pb_Ok.setIcon(icon1)
 
         self.gridLayout.addWidget(self.pb_Ok, 2, 0, 1, 1)
@@ -63,6 +63,7 @@ class Ui_w_LoginForm(object):
 
         self.le_Password = QLineEdit(self.groupBox)
         self.le_Password.setObjectName(u"le_Password")
+        self.le_Password.setEchoMode(QLineEdit.Password)
 
         self.formLayout.setWidget(1, QFormLayout.FieldRole, self.le_Password)
 
@@ -77,7 +78,7 @@ class Ui_w_LoginForm(object):
         self.pb_Cancel = QPushButton(w_LoginForm)
         self.pb_Cancel.setObjectName(u"pb_Cancel")
         icon2 = QIcon()
-        icon2.addFile(u":/Buttons/cross.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/Buttons/cross", QSize(), QIcon.Normal, QIcon.Off)
         self.pb_Cancel.setIcon(icon2)
 
         self.gridLayout.addWidget(self.pb_Cancel, 2, 1, 1, 1)
@@ -86,6 +87,9 @@ class Ui_w_LoginForm(object):
 
         self.gridLayout.addItem(self.verticalSpacer, 1, 0, 1, 2)
 
+        QWidget.setTabOrder(self.le_user_ID, self.le_Password)
+        QWidget.setTabOrder(self.le_Password, self.pb_Ok)
+        QWidget.setTabOrder(self.pb_Ok, self.pb_Cancel)
 
         self.retranslateUi(w_LoginForm)
 
@@ -98,6 +102,7 @@ class Ui_w_LoginForm(object):
         self.groupBox.setTitle(QCoreApplication.translate("w_LoginForm", u"Welcome! Please Login", None))
         self.label.setText(QCoreApplication.translate("w_LoginForm", u"User ID:", None))
         self.label_2.setText(QCoreApplication.translate("w_LoginForm", u"Password:", None))
+        self.le_Password.setText("")
         self.lb_Message.setText(QCoreApplication.translate("w_LoginForm", u"Message", None))
         self.pb_Cancel.setText(QCoreApplication.translate("w_LoginForm", u"Cancel", None))
     # retranslateUi

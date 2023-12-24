@@ -30,7 +30,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../Icons/Icons.qrc">
-       <normaloff>:/Buttons/tick.png</normaloff>:/Buttons/tick.png</iconset>
+       <normaloff>:/Buttons/tick</normaloff>:/Buttons/tick</iconset>
      </property>
     </widget>
    </item>
@@ -61,7 +61,14 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLineEdit" name="le_Password"/>
+       <widget class="QLineEdit" name="le_Password">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -80,7 +87,7 @@
      </property>
      <property name="icon">
       <iconset resource="../../Icons/Icons.qrc">
-       <normaloff>:/Buttons/cross.png</normaloff>:/Buttons/cross.png</iconset>
+       <normaloff>:/Buttons/cross</normaloff>:/Buttons/cross</iconset>
      </property>
     </widget>
    </item>
@@ -99,6 +106,12 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>le_user_ID</tabstop>
+  <tabstop>le_Password</tabstop>
+  <tabstop>pb_Ok</tabstop>
+  <tabstop>pb_Cancel</tabstop>
+ </tabstops>
  <resources>
   <include location="../../Icons/Icons.qrc"/>
  </resources>
